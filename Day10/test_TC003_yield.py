@@ -1,5 +1,9 @@
 import pytest
 
+@pytest.mark.smoke
+def test_smoke():
+    assert True
+
 @pytest.fixture()
 def setup_teardown():
     print("setup")

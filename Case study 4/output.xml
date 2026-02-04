@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.11.9 on win32)" generated="2026-02-02T16:39:46.934082" rpa="false" schemaversion="5">
+<suite id="s1" name="Patient" source="C:\Users\DELL\PycharmProjects\PythonProject\Hospital Management\patient.robot">
+<kw name="Open Hospital Application" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:47.132668" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:5000'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-02T16:39:47.132668" elapsed="1.320151"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-02T16:39:48.452819" elapsed="0.057425"/>
+</kw>
+<status status="PASS" start="2026-02-02T16:39:47.131668" elapsed="1.378576"/>
+</kw>
+<test id="s1-t1" name="Register Single Patient" line="11">
+<kw name="Enter Patient Details">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:48.513758" level="INFO">Typing text 'Rahul' into text field 'name=name'.</msg>
+<arg>name=name</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:39:48.512760" elapsed="0.166848"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:48.679608" level="INFO">Typing text '30' into text field 'name=age'.</msg>
+<arg>name=age</arg>
+<arg>${age}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:39:48.679608" elapsed="0.435717"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:49.116324" level="INFO">Clicking element 'xpath=//input[@value='Male']'.</msg>
+<arg>xpath=//input[@value='${gender}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:39:49.116324" elapsed="0.075324"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:49.192654" level="INFO">Typing text 'Fever' into text field 'name=disease'.</msg>
+<arg>name=disease</arg>
+<arg>${disease}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:39:49.191648" elapsed="0.066931"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:49.258579" level="INFO">Selecting options from selection list 'name=doctor' by label Dr. Sharma.</msg>
+<arg>name=doctor</arg>
+<arg>${doctor}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-02-02T16:39:49.258579" elapsed="0.084014"/>
+</kw>
+<arg>Rahul</arg>
+<arg>30</arg>
+<arg>Male</arg>
+<arg>Fever</arg>
+<arg>Dr. Sharma</arg>
+<status status="PASS" start="2026-02-02T16:39:48.511760" elapsed="0.830833"/>
+</kw>
+<status status="PASS" start="2026-02-02T16:39:48.510752" elapsed="0.839864"/>
+</test>
+<test id="s1-t2" name="Register Multiple Patients" line="14">
+<kw name="Enter Patient Details">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:49.352622" level="INFO">Typing text 'Amit' into text field 'name=name'.</msg>
+<arg>name=name</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:39:49.352622" elapsed="0.080724"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:49.433346" level="INFO">Typing text '25' into text field 'name=age'.</msg>
+<arg>name=age</arg>
+<arg>${age}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:39:49.433346" elapsed="0.086896"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:49.521242" level="INFO">Clicking element 'xpath=//input[@value='Male']'.</msg>
+<arg>xpath=//input[@value='${gender}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:39:49.521242" elapsed="0.052759"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:49.574001" level="INFO">Typing text 'Cold' into text field 'name=disease'.</msg>
+<arg>name=disease</arg>
+<arg>${disease}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:39:49.574001" elapsed="0.105093"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:49.679599" level="INFO">Selecting options from selection list 'name=doctor' by label Dr. Verma.</msg>
+<arg>name=doctor</arg>
+<arg>${doctor}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-02-02T16:39:49.679599" elapsed="0.093179"/>
+</kw>
+<arg>Amit</arg>
+<arg>25</arg>
+<arg>Male</arg>
+<arg>Cold</arg>
+<arg>Dr. Verma</arg>
+<status status="PASS" start="2026-02-02T16:39:49.351621" elapsed="0.421157"/>
+</kw>
+<kw name="Enter Patient Details">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:49.774779" level="INFO">Typing text 'Neha' into text field 'name=name'.</msg>
+<arg>name=name</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:39:49.774779" elapsed="0.081082"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:49.857369" level="INFO">Typing text '28' into text field 'name=age'.</msg>
+<arg>name=age</arg>
+<arg>${age}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:39:49.857369" elapsed="0.084308"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:49.942679" level="INFO">Clicking element 'xpath=//input[@value='Female']'.</msg>
+<arg>xpath=//input[@value='${gender}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:39:49.941677" elapsed="0.063889"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:50.005566" level="INFO">Typing text 'Fever' into text field 'name=disease'.</msg>
+<arg>name=disease</arg>
+<arg>${disease}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:39:50.005566" elapsed="0.126161"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:39:50.132732" level="INFO">Selecting options from selection list 'name=doctor' by label Dr. Sharma.</msg>
+<arg>name=doctor</arg>
+<arg>${doctor}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-02-02T16:39:50.131727" elapsed="0.070128"/>
+</kw>
+<arg>Neha</arg>
+<arg>28</arg>
+<arg>Female</arg>
+<arg>Fever</arg>
+<arg>Dr. Sharma</arg>
+<status status="PASS" start="2026-02-02T16:39:49.773779" elapsed="0.429074"/>
+</kw>
+<status status="PASS" start="2026-02-02T16:39:49.350616" elapsed="0.852237"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-02T16:39:50.203856" elapsed="2.183925"/>
+</kw>
+<status status="PASS" start="2026-02-02T16:39:46.936083" elapsed="5.451698"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Patient" id="s1" pass="2" fail="0" skip="0">Patient</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

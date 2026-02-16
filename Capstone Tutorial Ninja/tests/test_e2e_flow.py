@@ -1,3 +1,5 @@
+import json
+
 from pages.login_page import LoginPage
 from pages.search_page import SearchPage
 from pages.product_page import ProductPage
@@ -7,14 +9,27 @@ from pages.account_page import AccountPage
 
 def test_full_ecommerce_flow(driver):
 
+    # LOAD USER DATA
+    with open("data/users.json") as f:
+        user_data = json.load(f)
+
+    email = user_data["valid_user"]["email"]
+    password = user_data["valid_user"]["password"]
+
+    # LOAD PRODUCT DATA
+    with open("data/products.json") as f:
+        product_data = json.load(f)
+
+    product_name = product_data["search_product"]
+
     # LOGIN
     login = LoginPage(driver)
     login.open_login()
-    login.login("abhay+1@gmail.com", "Test@123")
+    login.login(email, password)
 
     # SEARCH PRODUCT
     search = SearchPage(driver)
-    search.search_product("iphone")
+    search.search_product(product_name)
     search.open_first_product()
 
     # ADD TO CART

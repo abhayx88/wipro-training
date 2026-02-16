@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from .models import db, User, Restaurant, Dish, Order
+from models import db, User, Restaurant, Dish, Order
 from flask_jwt_extended import create_access_token, jwt_required
 
 api = Blueprint("api", __name__)
@@ -117,3 +117,4 @@ def get_orders(user_id):
     result = [{"id": o.id, "restaurant_id": o.restaurant_id} for o in orders]
 
     return jsonify(result)
+

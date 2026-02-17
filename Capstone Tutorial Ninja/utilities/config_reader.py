@@ -1,24 +1,16 @@
 import configparser
-import os
 
 config = configparser.ConfigParser()
+config.read("config/config.ini")
 
-config_path = os.path.join(
-    os.path.dirname(os.path.dirname(__file__)),
-    "config",
-    "config.ini"
-)
-
-config.read(config_path)
 
 def get_url():
-    return config.get("settings", "url")
+    return config["DEFAULT"]["url"]
+
 
 def get_browser():
-    return config.get("settings", "browser")
+    return config["DEFAULT"]["browser"]
 
-def get_implicit_wait():
-    return int(config.get("settings", "implicit_wait"))
 
 def get_explicit_wait():
-    return int(config.get("settings", "explicit_wait"))
+    return int(config["DEFAULT"]["explicit_wait"])

@@ -1,24 +1,21 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from utilities.config_reader import get_browser, get_implicit_wait
+
+# try reading config, but don't crash if missing
+try:
+    from utilities.config_reader import get_browser
+    browser = get_browser().lower()
+except Exception:
+    # fallback default
+    browser = "chrome"
+
 
 def get_driver():
 
-    browser = get_browser().lower()
-
-    if browser == "chrome":
-        options = webdriver.ChromeOptions()
-        options.add_argument("--start-maximized")
-
-        driver = webdriver.Chrome(
-            service=Service(ChromeDriverManager().install()),
-            options=options
-        )
-
+    if browser == "firefox":
+        driver = webdriver.Firefox()
     else:
-        raise Exception("Browser not supported")
+        # default always chrome
+        driver = webdriver.Chrome()
 
-    driver.implicitly_wait(get_implicit_wait())
-
+    driver.maximize_window()
     return driver

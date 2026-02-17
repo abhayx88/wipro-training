@@ -1,3 +1,4 @@
+import time
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
@@ -12,6 +13,7 @@ class CartPage(BasePage):
 
     def open_cart(self):
         self.click(self.cart_btn)
+        time.sleep(2)  # allow dropdown animation
         self.click(self.view_cart)
 
     def update_quantity(self, qty):

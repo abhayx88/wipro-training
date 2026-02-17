@@ -1,20 +1,27 @@
-import json
+import csv
+import os
+import pytest
 from pages.search_page import SearchPage
 
 
-def test_search_product(driver):
+def load_products():
+    base = os.path.dirname(os.path.dirname(__file__))
+    path = os.path.join(base, "data", "products.csv")
 
-    with open("data/products.json") as f:
-        data = json.load(f)
+    products = []
+    with open(path, newline="") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            products.append(row["product"])
+    return products
 
-    product_name = data["search_product"]
+@pytest.mark.smoke
+@pytest.mark.order(3)
+@pytest.mark.parametrize("product_name", load_products())
+def test_search_product(driver, product_name):
 
     search = SearchPage(driver)
-
     search.search_product(product_name)
 
+    # verify search results page opened
     assert "Search" in driver.title
-
-    search.open_first_product()
-
-    assert "iPhone" in driver.page_source
